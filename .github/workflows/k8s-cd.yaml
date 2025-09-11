@@ -26,10 +26,10 @@ jobs:
       #   run: |
       #     yamllint k8s-specifications/ || true
 
-      # - name: Dry-run kubectl apply
+      # - name: Dry-run sudo -u ubuntu kubectl apply
       #   run: |
-      #     kubectl apply --dry-run=client -f k8s-specifications/ -R
+      #     sudo -u ubuntu kubectl apply --dry-run=client -f k8s-specifications/ -R
 
       - name: Deploy Kubernetes specifications
         run: |
-          kubectl apply -f k8s-specifications/ -R
+          sudo -u ubuntu kubectl apply -f k8s-specifications/ -R

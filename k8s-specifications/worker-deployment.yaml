@@ -18,6 +18,17 @@ spec:
       - image: deadvexon/worker-find-your-bias:74db4f7bc029764beeb17ca40a0e0c006931599d
         imagePullPolicy: Always
         name: worker
+        env:
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: POSTGRES_USER
         livenessProbe:
           exec:
             command: ["pidof", "dotnet"]

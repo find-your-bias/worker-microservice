@@ -15,7 +15,7 @@ spec:
         app: worker
     spec:
       containers:
-      - image: deadvexon/worker-find-your-bias:74db4f7bc029764beeb17ca40a0e0c006931599d
+      - image: deadvexon/worker-find-your-bias:4610faee7112cea805f8c5719c2f442e3b51926c
         imagePullPolicy: Always
         name: worker
         env:
